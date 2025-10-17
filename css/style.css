@@ -1,3 +1,16 @@
+header {
+  padding: 50px;
+  text-align: center;
+  color: white;
+}
+
+.seccion1 h2{
+  color: black;
+  padding: 20px;
+
+}
+
+
 
 @import url('https://fonts.googleapis.com/css?family=Exo:400,700');
 
