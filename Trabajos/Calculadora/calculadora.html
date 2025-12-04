@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Portafolio</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Daniel Baeza Garrobo</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../indice.html">Inicio</a></li>
+                <li><a href="../../estudios.html">Estudios</a></li>
+                <li><a href="../indice.html">Proyectos</a></li>
+                <li><a href="../../Apuntes/indice.html">Apuntes</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="calc">
+            <!-- Pantalla donde se muestran los números y resultados -->
+            <div id="pantalla">0</div>
+            
+            <!-- Contenedor de todos los botones -->
+            <div class="botones">
+                <!-- Botones con funciones onclick que llaman a las funciones JavaScript -->
+                <!-- Fila 1: Botones de operaciones -->
+                <button onclick="limpiar()">C</button>        <!-- Limpia la pantalla -->
+                <button onclick="agregar('/')">/</button>     <!-- Agrega división -->
+                <button onclick="agregar('*')">*</button>     <!-- Agrega multiplicación -->
+                <button onclick="agregar('-')">-</button>     <!-- Agrega resta -->
+                
+                <!-- Fila 2: Números 7,8,9 y suma -->
+                <button onclick="agregar('7')">7</button>     <!-- Agrega número 7 -->
+                <button onclick="agregar('8')">8</button>     <!-- Agrega número 8 -->
+                <button onclick="agregar('9')">9</button>     <!-- Agrega número 9 -->
+                <button onclick="agregar('+')">+</button>     <!-- Agrega suma -->
+                
+                <!-- Fila 3: Números 4,5,6 e igual -->
+                <button onclick="agregar('4')">4</button>     <!-- Agrega número 4 -->
+                <button onclick="agregar('5')">5</button>     <!-- Agrega número 5 -->
+                <button onclick="agregar('6')">6</button>     <!-- Agrega número 6 -->
+                <button onclick="calcular()">=</button>       <!-- Calcula el resultado -->
+                
+                <!-- Fila 4: Números 1,2,3,0 -->
+                <button onclick="agregar('1')">1</button>     <!-- Agrega número 1 -->
+                <button onclick="agregar('2')">2</button>     <!-- Agrega número 2 -->
+                <button onclick="agregar('3')">3</button>     <!-- Agrega número 3 -->
+                <button onclick="agregar('0')">0</button>     <!-- Agrega número 0 -->
+                
+                <!-- Fila 5: Punto decimal -->
+                <button onclick="agregar('.')">.</button>     <!-- Agrega punto decimal -->
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Mi Portafolio. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Enlaza el archivo JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

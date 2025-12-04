@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Portafolio</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Daniel Baeza Garrobo</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../indice.html">Inicio</a></li>
+                <li><a href="../../estudios.html">Estudios</a></li>
+                <li><a href="../indice.html">Proyectos</a></li>
+                <li><a href="../../Apuntes/indice.html">Apuntes</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="app" role="main">
+        <section class="layout">
+      <!-- Área izquierda: ruleta -->
+      <div class="wheel-panel">
+        <div class="wheel-wrap" id="wheelWrap">
+          <canvas id="wheelCanvas" aria-label="Ruleta"></canvas>
+          <!-- Botón centrado sobre la ruleta -->
+          <button id="spinButton" class="spin-center" aria-live="polite" aria-label="Girar ruleta">GIRAR</button>
+        </div>
+
+        <div class="winner-panel" id="winnerPanel" aria-live="polite">—</div>
+      </div>
+
+      <!-- Área derecha: controles -->
+      <aside class="controls-panel" aria-label="Controles de la ruleta">
+        <div class="input-row">
+          <input id="optionInput" type="text" placeholder="Añadir opción (ej: 'Café')" autocomplete="off" />
+          <button id="addButton">Agregar</button>
+        </div>
+
+        <div class="list-panel">
+          <h2>Opciones</h2>
+          <ul id="optionsList" class="options-list" aria-label="Lista de opciones"></ul>
+        </div>
+
+        <div class="help">
+          <small>Si no hay opciones, el botón de girar está deshabilitado.</small>
+        </div>
+      </aside>
+    </section>
+  </main>
+  <footer>
+        <p>&copy; 2025 Mi Portafolio. Todos los derechos reservados.</p>
+    </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

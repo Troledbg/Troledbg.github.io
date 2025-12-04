@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Portafolio</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Daniel Baeza Garrobo</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../indice.html">Inicio</a></li>
+                <li><a href="../../estudios.html">Estudios</a></li>
+                <li><a href="../indice.html">Proyectos</a></li>
+                <li><a href="../../Apuntes/indice.html">Apuntes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<div class="bingo-layout">
+   
+    <!-- IZQUIERDA -->
+    <div class="bingo-izquierda">
+        <h1>Bingo</h1>
+        <div class="botones-bingo">
+            <button onclick="sacarNumero()">Sacar número</button>
+            <button onclick="limpiarBingo()">Limpiar</button>
+        </div>
+
+        <h3>Número obtenido:</h3>
+        <div id="resultado">-</div>
+    </div>
+
+    <!-- DERECHA -->
+    <div class="bingo-derecha">
+        <h3>Números sacados:</h3>
+        <table border="1">
+            <tbody id="tabla">
+                <!-- Aquí generará las celdas el script -->
+            </tbody>
+        </table>
+    </div>
+
+</div>
+    <footer>
+        <p>&copy; 2025 Mi Portafolio. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

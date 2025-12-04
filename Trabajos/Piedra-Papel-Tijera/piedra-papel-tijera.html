@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Portafolio</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Daniel Baeza Garrobo</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../indice.html">Inicio</a></li>
+                <li><a href="../../estudios.html">Estudios</a></li>
+                <li><a href="../indice.html">Proyectos</a></li>
+                <li><a href="../../Apuntes/indice.html">Apuntes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="juego-container">
+        <h1 class="juego-title">Piedra, Papel o Tijera</h1>
+        
+        <div class="marcador">
+            <div class="marcador-item">
+                <span class="marcador-numero" id="marcador-usuario">0</span>
+                <span>Jugador</span>
+            </div>
+            <div class="marcador-item">
+                <span class="marcador-numero" id="marcador-computadora">0</span>
+                <span>Computadora</span>
+            </div>
+        </div>
+
+        <div class="elecciones">
+            <div class="eleccion">
+                <h3>Tu elección</h3>
+                <div id="eleccion-usuario">-</div>
+            </div>
+            <div class="eleccion">
+                <h3>Computadora</h3>
+                <div id="eleccion-computadora">-</div>
+            </div>
+        </div>
+
+        <div class="opciones">
+            <button class="opcion-btn" data-opcion="piedra">✊ Piedra</button>
+            <button class="opcion-btn" data-opcion="papel">✋ Papel</button>
+            <button class="opcion-btn" data-opcion="tijera">✌️ Tijera</button>
+        </div>
+
+        <div class="resultado" id="resultado">
+            ¡Elige una opción para comenzar!
+        </div>
+
+        <button class="btn reiniciar-btn" id="reiniciar">Reiniciar Juego</button>
+    </div>
+    <footer>
+        <p>&copy; 2025 Mi Portafolio. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

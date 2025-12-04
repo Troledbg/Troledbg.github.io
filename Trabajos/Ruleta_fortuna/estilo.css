@@ -1,0 +1,345 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+
+    /* Fondo degradado oscuro */
+    background: radial-gradient(circle at top left, #1e1b4b, #0f172a 60%, #020617);
+
+    /* Evita que el fondo se mueva o afecte al contenido */
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    color: #f1f5f9; /* Puedes quitar esto si no quieres cambiar el color del texto */
+}
+
+/* Diseño del header */
+header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    /* Un poco más alto que el original, pero sin pasarse */
+    padding: 0.3rem 0;
+
+    background: rgba(2, 6, 23, 0.7);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 22px rgba(0,0,0,0.4);
+}
+
+/* Contenedor interno ligeramente más ancho */
+header nav {
+    max-width: 1350px; /* Intermedio entre 1200 y 1500 */
+    margin: 0 auto;
+    padding: 1.2rem 2.5rem; /* Termino medio */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Tamaño del nombre más equilibrado */
+.logo h1 {
+    margin: 0;
+    font-size: 1.8rem;  /* Entre 1.6 y 2 */
+    color: #38bdf8;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+}
+
+/* Navegación más proporcionada */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2.2rem; /* Entre 2 y 2.5 */
+    padding: 0;
+    margin: 0;
+}
+
+/* Enlaces ligeramente más grandes */
+.nav-links a {
+    color: #f1f5f9;
+    text-decoration: none;
+    font-size: 1.05rem; /* Entre 1 y 1.1 */
+    padding: 9px 16px;  /* Entre 8x14 y 10x18 */
+    border-radius: 9px;
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+    background: #38bdf8;
+    color: #020617;
+    box-shadow: 0 3px 10px rgba(56, 189, 248, 0.4);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    header nav {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem 1.5rem;
+    }
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+}
+
+/*-------------------------------------*/
+/* ---- CONTENEDOR GENERAL ---- */
+main.app {
+    max-width: 1350px;
+    margin: 3rem auto;
+    padding: 2rem;
+}
+
+/* Grid principal: ruleta izquierda / controles derecha */
+.layout {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+/* ---- PANEL DE RULETA ---- */
+.wheel-panel {
+    background: rgba(2, 6, 23, 0.35);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.4);
+    backdrop-filter: blur(8px);
+}
+
+.wheel-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+}
+
+#wheelCanvas {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.4));
+}
+
+/* Botón centrado sobre la ruleta */
+.spin-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1.1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background: #38bdf8;
+    color: #020617;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 18px rgba(56, 189, 248, 0.35);
+}
+
+.spin-center:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.spin-center:hover:not(:disabled) {
+    background: #0ea5e9;
+    box-shadow: 0 6px 28px rgba(56, 189, 248, 0.5);
+}
+
+/* Resultado del ganador */
+.winner-panel {
+    margin-top: 1.8rem;
+    text-align: center;
+    font-size: 1.6rem;
+    padding: 1rem;
+    border-radius: 14px;
+    background: rgba(56, 189, 248, 0.1);
+    box-shadow: inset 0 0 10px rgba(56, 189, 248, 0.25);
+    color: #38bdf8;
+    font-weight: 600;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* ---- PANEL DE CONTROLES ---- */
+.controls-panel {
+    background: rgba(2, 6, 23, 0.35);
+    padding: 2rem;
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 6px 25px rgba(0,0,0,0.4);
+}
+
+/* Input + botón agregar */
+.input-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.8rem;
+}
+
+.input-row input {
+    flex: 1;
+    padding: 0.8rem 1rem;
+    border-radius: 10px;
+    border: 2px solid rgba(148,163,184,0.2);
+    background: rgba(15, 23, 42, 0.6);
+    color: #f1f5f9;
+    font-size: 1rem;
+    transition: 0.25s;
+}
+
+.input-row input:focus {
+    outline: none;
+    border-color: #38bdf8;
+    box-shadow: 0 0 8px rgba(56,189,248,0.4);
+}
+
+#addButton {
+    padding: 0.8rem 1.2rem;
+    background: #38bdf8;
+    border: none;
+    border-radius: 10px;
+    color: #020617;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 3px 15px rgba(56, 189, 248, 0.4);
+}
+
+#addButton:hover {
+    background: #0ea5e9;
+}
+
+/* Lista de opciones */
+.list-panel h2 {
+    margin: 0 0 1rem 0;
+    color: #38bdf8;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-shadow: 0 0 6px rgba(56, 189, 248, 0.3);
+}
+
+.options-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.options-list li {
+    background: rgba(15, 23, 42, 0.65);
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    margin-bottom: 0.6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 4px solid #38bdf8;
+    transition: 0.25s ease;
+}
+
+.options-list li:hover {
+    transform: translateX(4px);
+    background: rgba(56, 189, 248, 0.15);
+}
+
+.options-list button {
+    background: #ef4444;
+    border: none;
+    color: white;
+    padding: 0.4rem 0.7rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.options-list button:hover {
+    background: #dc2626;
+}
+
+.help {
+    margin-top: 1.5rem;
+    text-align: center;
+    color: #94a3b8;
+}
+
+
+/* ---- RESPONSIVO ---- */
+@media (max-width: 900px) {
+    .layout {
+        grid-template-columns: 1fr;
+    }
+    .wheel-wrap {
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 600px) {
+    main.app {
+        padding: 1rem;
+    }
+    .wheel-panel, .controls-panel {
+        padding: 1.5rem;
+    }
+}
+
+.wheel-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 520px;   /* ← Antes 420px */
+    margin: 0 auto;
+}
+
+#wheelCanvas {
+    width: 200%;
+    height: auto;
+    max-width: 8000px;   /* ← asegura escala */
+    filter: drop-shadow(0 0 12px rgba(56, 189, 248, 0.45));
+}
+
+.winner-panel {
+    margin-top: 1.2rem;
+    text-align: center;
+    font-size: 1.1rem;        /* ← más pequeño */
+    padding: 0.6rem 1rem;     /* ← menos padding */
+    border-radius: 10px;
+    background: rgba(56, 189, 248, 0.08);
+    box-shadow: inset 0 0 6px rgba(56, 189, 248, 0.25);
+    color: #38bdf8;
+    font-weight: 600;
+    min-height: 35px;         /* ← más pequeño */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.wheel-panel {
+    background: rgba(2, 6, 23, 0.35);
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.4);
+    backdrop-filter: blur(8px);
+
+    transform: translateY(-25px);  /* ← Súbelo aquí */
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 3rem;
+    color: #94a3b8;
+    font-size: 0.95rem;
+
+    background: rgba(2, 6, 23, 0.5);
+    backdrop-filter: blur(5px);
+    border-top: 1px solid rgba(255,255,255,0.05);
+}

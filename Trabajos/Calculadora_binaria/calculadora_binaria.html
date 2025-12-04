@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Portafolio</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Daniel Baeza Garrobo</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../indice.html">Inicio</a></li>
+                <li><a href="../../estudios.html">Estudios</a></li>
+                <li><a href="../indice.html">Proyectos</a></li>
+                <li><a href="../../Apuntes/indice.html">Apuntes</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="wrapper">
+    <h1>Calculadora Binaria ↔ Decimal</h1>
+    
+    <div class="container">
+      <div class="panel izquierda">
+        <h2>Entradas</h2>
+        <div class="inputs">
+          <input type="text" id="num1" placeholder="Número 1 (binario o decimal)">
+          <input type="text" id="num2" placeholder="Número 2 (binario o decimal)">
+        </div>
+
+        <div class="botones">
+          <button onclick="operar('sumar')">+</button>
+          <button onclick="operar('restar')">−</button>
+          <button onclick="operar('multiplicar')">×</button>
+          <button onclick="operar('dividir')">÷</button>
+        </div>
+        <p id="error" class="error"></p>
+      </div>
+
+      <div class="panel derecha">
+        <h2>Conversión y Resultado</h2>
+        <div class="resultado">
+          <p><strong>Número 1:</strong></p>
+          <p>Binario: <span id="num1Bin">-</span></p>
+          <p>Decimal: <span id="num1Dec">-</span></p>
+          <hr>
+          <p><strong>Número 2:</strong></p>
+          <p>Binario: <span id="num2Bin">-</span></p>
+          <p>Decimal: <span id="num2Dec">-</span></p>
+          <hr>
+          <p><strong>Resultado:</strong></p>
+          <p>Binario: <span id="resBin">-</span></p>
+          <p>Decimal: <span id="resDec">-</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+        <p>&copy; 2025 Mi Portafolio. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,251 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+
+    /* Fondo degradado oscuro */
+    background: radial-gradient(circle at top left, #1e1b4b, #0f172a 60%, #020617);
+
+    /* Evita que el fondo se mueva o afecte al contenido */
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    color: #f1f5f9; /* Puedes quitar esto si no quieres cambiar el color del texto */
+}
+
+/* Diseño del header */
+header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    /* Un poco más alto que el original, pero sin pasarse */
+    padding: 0.3rem 0;
+
+    background: rgba(2, 6, 23, 0.7);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 22px rgba(0,0,0,0.4);
+}
+
+/* Contenedor interno ligeramente más ancho */
+header nav {
+    max-width: 1350px; /* Intermedio entre 1200 y 1500 */
+    margin: 0 auto;
+    padding: 1.2rem 2.5rem; /* Termino medio */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Tamaño del nombre más equilibrado */
+.logo h1 {
+    margin: 0;
+    font-size: 1.8rem;  /* Entre 1.6 y 2 */
+    color: #38bdf8;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+}
+
+/* Navegación más proporcionada */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2.2rem; /* Entre 2 y 2.5 */
+    padding: 0;
+    margin: 0;
+}
+
+/* Enlaces ligeramente más grandes */
+.nav-links a {
+    color: #f1f5f9;
+    text-decoration: none;
+    font-size: 1.05rem; /* Entre 1 y 1.1 */
+    padding: 9px 16px;  /* Entre 8x14 y 10x18 */
+    border-radius: 9px;
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+    background: #38bdf8;
+    color: #020617;
+    box-shadow: 0 3px 10px rgba(56, 189, 248, 0.4);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    header nav {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem 1.5rem;
+    }
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+}
+
+/*-------------------------------------*/
+
+/* CONTENEDOR GENERAL */
+.juego-container {
+    max-width: 720px;     /* ← tamaño medio equilibrado */
+    margin: 2.5rem auto;
+    padding: 2rem;
+    background: rgba(2, 6, 23, 0.40);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 7px 25px rgba(0,0,0,0.45);
+    text-align: center;
+}
+
+/* TÍTULO */
+.juego-title {
+    font-size: 1.8rem;    /* tamaño medio */
+    color: #38bdf8;
+    margin-bottom: 1.4rem;
+}
+
+/* MARCADOR */
+.marcador {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    margin-bottom: 1.8rem;
+}
+
+.marcador-item {
+    background: rgba(15, 23, 42, 0.55);
+    padding: 0.9rem 1.3rem;  
+    border-radius: 14px;
+    border-left: 3px solid #38bdf8;
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+}
+
+.marcador-numero {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #38bdf8;
+}
+
+/* ELECCIONES (Usuario / PC) */
+.elecciones {
+    display: flex;
+    justify-content: center;
+    gap: 2.4rem;
+    margin-bottom: 2rem;
+}
+
+.eleccion {
+    background: rgba(15, 23, 42, 0.55);
+    padding: 1rem 1.6rem;
+    border-radius: 16px;
+    width: 160px;   
+}
+
+.eleccion h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.6rem;
+}
+
+.eleccion div {
+    font-size: 1.6rem;    
+    font-weight: 600;
+}
+
+/* BOTONES DE OPCIÓN */
+.opciones {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.opcion-btn {
+    padding: 0.7rem 1.3rem;
+    font-size: 1.05rem;  
+    font-weight: 600;
+    background: rgba(56, 189, 248, 0.2);
+    color: #f1f5f9;
+    border: 2px solid #38bdf8;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.opcion-btn:hover {
+    background: #38bdf8;
+    color: #020617;
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.6);
+    transform: translateY(-2px);
+}
+
+/* RESULTADO */
+.resultado {
+    font-size: 1.2rem;
+    padding: 0.8rem 1.2rem;
+    border-radius: 14px;
+    margin-bottom: 1.8rem;
+    min-height: 55px;
+    background: rgba(56, 189, 248, 0.15);
+    box-shadow: inset 0 0 10px rgba(56, 189, 248, 0.25);
+    color: #38bdf8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* BOTÓN REINICIAR */
+.reiniciar-btn {
+    padding: 0.7rem 1.8rem;
+    font-size: 1rem;  
+    font-weight: 600;
+    border-radius: 14px;
+    background: #38bdf8;
+    color: #020617;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.reiniciar-btn:hover {
+    background: #0ea5e9;
+    box-shadow: 0 5px 25px rgba(56, 189, 248, 0.6);
+    transform: translateY(-2px);
+}
+
+/* RESPONSIVO */
+@media (max-width: 650px) {
+    .marcador {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .elecciones {
+        flex-direction: column;
+        gap: 1.4rem;
+    }
+
+    .opciones {
+        flex-direction: column;
+    }
+
+    .opcion-btn {
+        width: 100%;
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 3rem;
+    color: #94a3b8;
+    font-size: 0.95rem;
+
+    background: rgba(2, 6, 23, 0.5);
+    backdrop-filter: blur(5px);
+    border-top: 1px solid rgba(255,255,255,0.05);
+}

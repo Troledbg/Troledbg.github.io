@@ -12,16 +12,89 @@
                 <h1>Daniel Baeza Garrobo</h1>
             </div>
             <ul class="nav-links">
-                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../indice.html">Inicio</a></li>
                 <li><a href="../estudios.html">Estudios</a></li>
-                <li><a href="#indice">Proyectos</a></li>
+                <li><a href="../Trabajos/indice.html">Proyectos</a></li>
                 <li><a href="../Apuntes/indice.html">Apuntes</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <br><br><br><br>
+        <main>
+        <section id="inicio" class="hero">
+            <div class="hero-content">
+                <h2>Desarrollador Full Stack</h2>
+                <p>Creando experiencias interactivas y aplicaciones web modernas</p>
+                <a href="#proyectos" class="btn hero-btn">Ver proyectos</a>
+            </div>
+        </section>
+
+        <section id="proyectos" class="proyectos">
+            <h2>Mis Proyectos</h2>
+            <div class="proyectos-grid">
+                <div class="proyecto-card">
+                    <h3>Piedra, Papel o Tijera</h3>
+                    <p>Clásico juego implementado en JavaScript</p>
+                    <a href="Piedra-Papel-Tijera/piedra-papel-tijera.html" class="btn">Jugar ahora</a>
+                </div>
+                <div class="proyecto-card">
+                    <h3>Calculadora</h3>
+                    <p>Clásica calculadora implementada en JavaScript</p>
+                    <a href="Calculadora/calculadora.html" class="btn">Probar ahora</a>
+                </div>
+                <div class="proyecto-card">
+                    <h3>Calculadora Binaria</h3>
+                    <p>Calculadora de números binarios en JavaScript</p>
+                    <a href="Calculadora_Binaria/calculadora_binaria.html" class="btn">Probar ahora</a>
+                </div>
+                <div class="proyecto-card">
+                    <h3>Ruleta de la Fortuna</h3>
+                    <p>Ruleta funcional & estable — añade, quita y gira</p>
+                    <a href="Ruleta_fortuna/ruleta_fortuna.html" class="btn">Probar ahora</a>
+                </div>
+                <div class="proyecto-card">
+                    <h3>Bingo</h3>
+                    <p>Bingo clásico - Prueba suerte</p>
+                    <a href="Bingo/bingo.html" class="btn">Probar ahora</a>
+                </div>
+            </div>
+        </section>
+
+        <!--Contacto-->
+        <section id="contacto" class="contacto">
+    <h2>Contacto</h2>
+    <p>¿Necesitas ayuda con un proyecto o deseas colaborar? Envíame un mensaje.</p>
+
+    <form class="contact-form" action="https://formsubmit.co/danielbaezagarrobo@gmail.com" method="POST">
+
+        <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="name" required placeholder="Tu nombre">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" required placeholder="email@ejemplo.com">
+        </div>
+
+        <div class="form-group">
+            <label for="asunto">Asunto</label>
+            <input type="text" id="asunto" name="subject" required placeholder="Motivo del mensaje">
+        </div>
+
+        <div class="form-group">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="message" rows="6" required placeholder="Escribe tu mensaje aquí..."></textarea>
+        </div>
+
+        <button type="submit" class="btn enviar-btn">Enviar mensaje</button>
+
+        <!-- Configuración de formsubmit.co -->
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="box">
+    </form>
+</section>
     </main>
 
 

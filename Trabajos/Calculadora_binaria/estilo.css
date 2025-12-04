@@ -90,75 +90,130 @@ header nav {
 
 /*-------------------------------------*/
 
-.Apuntes-clase {
-    max-width: 900px;
-    margin: 5rem auto 3rem;
-    padding: 2.2rem;
-    background: rgba(15, 23, 42, 0.55);
-    border: 1px solid rgba(56, 189, 248, 0.15);
-    border-radius: 18px;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 0 22px rgba(0, 0, 0, 0.35);
-    animation: fadeIn 0.8s ease forwards;
+.wrapper {
+  max-width: 900px;
+  margin: 2.5rem auto;
+  padding: 1.5rem;
+  text-align: center;
 }
 
-/* TÍTULO PRINCIPAL */
-.Apuntes-clase h2 {
-    text-align: center;
-    font-size: 2.2rem;
-    color: #38bdf8;
-    margin-bottom: 1.8rem;
+.wrapper h1 {
+  font-size: 2rem;
+  color: #38bdf8;
+  margin-bottom: 2rem;
 }
 
-/* CAJA INTERNA */
-.Apuntes-clase .caja-titulos ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+/* --- CONTENEDOR FLEX PRINCIPAL --- */
+.container {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: flex-start;
 }
 
-/* ELEMENTOS */
-.Apuntes-clase .caja-titulos li {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(56,189,248,0.15);
-    padding: 1rem 1.2rem;
-    margin-bottom: 0.9rem;
-    border-radius: 12px;
-    font-size: 1.1rem;
-    line-height: 1.6rem;
-    color: #e2e8f0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: 0.25s;
+/* --- PANELES --- */
+.panel {
+  flex: 1;
+  background: rgba(15, 23, 42, 0.55);
+  padding: 1.6rem;
+  border-radius: 18px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(10px);
 }
 
-/* EFECTO HOVER */
-.Apuntes-clase .caja-titulos li:hover {
-    background: rgba(255,255,255,0.1);
-    border-color: #38bdf8;
-    transform: translateX(4px);
+.panel h2 {
+  color: #38bdf8;
+  margin-bottom: 1.2rem;
+  font-size: 1.4rem;
 }
 
-/* ENLACES */
-.Apuntes-clase a {
-    color: #38bdf8;
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.2s;
+/* --- INPUTS --- */
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
 }
 
-.Apuntes-clase a:hover {
-    text-decoration: underline;
-    color: #7dd3fc;
+.inputs input {
+  padding: 0.8rem;
+  font-size: 1rem;
+  border-radius: 12px;
+  border: 2px solid rgba(56, 189, 248, 0.5);
+  background: rgba(255, 255, 255, 0.05);
+  color: #e2e8f0;
+  outline: none;
+  transition: 0.25s ease;
 }
 
-/* Animación general */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to   { opacity: 1; transform: translateY(0); }
+.inputs input:focus {
+  border-color: #38bdf8;
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.6);
 }
 
+/* --- BOTONES DE OPERACIÓN --- */
+.botones {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  margin: 1rem 0;
+}
+
+.botones button {
+  padding: 0.6rem 1rem;
+  font-size: 1.3rem;
+  cursor: pointer;
+  border-radius: 12px;
+  border: 2px solid #38bdf8;
+  background: rgba(56, 189, 248, 0.2);
+  color: #f1f5f9;
+  transition: 0.25s ease;
+}
+
+.botones button:hover {
+  background: #38bdf8;
+  color: #020617;
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.7);
+  transform: translateY(-2px);
+}
+
+/* --- RESULTADOS --- */
+.resultado {
+  background: rgba(15, 23, 42, 0.45);
+  padding: 1.2rem;
+  border-radius: 16px;
+  text-align: left;
+  font-size: 1.05rem;
+  color: #e2e8f0;
+  line-height: 1.5rem;
+  border-left: 3px solid #38bdf8;
+}
+
+.resultado p {
+  margin: 0.3rem 0;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background: rgba(56, 189, 248, 0.35);
+  margin: 0.8rem 0;
+}
+
+/* --- ERRORES --- */
+.error {
+  margin-top: 1rem;
+  color: #f87171;
+  font-weight: 600;
+  min-height: 20px;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 780px) {
+  .container {
+    flex-direction: column;
+  }
+}
 footer {
     text-align: center;
     padding: 1.5rem;
